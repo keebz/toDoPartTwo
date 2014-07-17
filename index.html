@@ -9,24 +9,44 @@
   </head>
     <body>
     <div class = "container">
-      <h1>To Do</h1>
+      <h1>Location</h1>
 
 
       <div class = "row">
         <div class = "col-md-6">
           <form id= "toDoForm">
            <div class="form-group">
-              <label for="toDo">Get Work!</label>
-              <input id="toDo" type = "text" class="form-control">
+              <label for="whatLocation">Where to Work</label>
+              <input id="whatLocation" type = "text" class="form-control">
            </div>
             <button type= "submit" class= "btn">Do Work!</button>
           </form>
 
-          <ul id= "listWork">
+          <ul id= "listLocation">
 
           </ul>
         </div>
       </div>
+
+      <div id= taskInput>
+        <h1>Add a task for:</h1>
+        <h1 id= "customLocation"></h1>
+        <div class = "row">
+          <div class = "col-md-6">
+            <form id= "taskPerLocation">
+             <div class="form-group">
+                <label for="toDo">Get Work!</label>
+                <input id="toDo" type = "text" class="form-control">
+             </div>
+              <button type= "submit" class= "btn">New Task!</button>
+            </form>
+            <ul id= "listWork">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
       </div>
     </div>
     </body>

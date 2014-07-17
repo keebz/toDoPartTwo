@@ -1,9 +1,12 @@
-#listWork:hover{
+li:hover{
   text-decoration: underline;
 }
 
-#listWork{
+li {
   color: #0088cc;
   cursor: pointer;
 }
 
+#taskInput {
+  display: none;
+}

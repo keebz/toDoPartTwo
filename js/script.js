@@ -1,16 +1,40 @@
 $(function(){
+  var currentList;
   $("form#toDoForm").submit(function(event){
     event.preventDefault();
+    var location = $("input#whatLocation").val();
+    $("ul#listLocation").append("<li>" + location + "</li>");
+
+    var doWork = {places: location, work:[]};
+
+
+    $("ul#listLocation li").last().click(function(){
+      currentList = doWork;
+      $("#taskInput").show();
+      $("h1#customLocation").text(doWork.places);
+      $("ul#listWork").empty();
+
+      $(".place").text(doWork.places);
+
+      currentList.work.forEach(function(job){
+        $("ul#listWork").append("<li>"+job+"</li>");
+      });
+    });
+  });
+
+  $("form#taskPerLocation").submit(function(event){
+    event.preventDefault();
+
     var task = $("input#toDo").val();
-    $("ul#listWork").append("<li>" + task + "</li>");
+    currentList.work.push(task);
+    $("ul#listWork").empty();
+    currentList.work.forEach(function(job){
+        $("ul#listWork").append("<li>"+job+"</li>");
+            // $(".work").empty();
+      });
 
-    $("li").last().click(function(){
-      $(this).css("text-decoration","line-through");
-    })
-    $("li").last().dblclick(function(){
-      $(this).remove();
-    })
-    $("input#toDo").val("");
+$("input#whatLocation").val("");
+$("input#toDo").val("");
 
-  })
+  });
 })
